@@ -1,25 +1,44 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useEffect, useState } from 'react';
+import NotesBoard from './components/NotesBoard/NotesBoard';
+import Button from './components/Button/Button';
+import { addNote, getAllNotes } from './adapters/notes';
 
+import './app.css';
+
+/**
+ * Component that contains state of the application.
+ */
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  const [notes, setNotes] = useState([]);
+
+  useEffect(() => {
+    getAllNotes()
+      .then(allNotes => {
+        if (allNotes !== null) {
+          setNotes(allNotes);
+        }
+      });
+  }, []);
+
+  const saveNote = note => {
+    addNote(note)
+      .then(allNotes => setNotes(allNotes));
+  };
+
+  const deleteNote = id => {
+    deleteNote(id)
+      .then(allNotes => setNotes(allNotes));
+  };
+
+  return (<div className="application-wrapper">
+    <Button className="add-btn">+</Button>
+    <NotesBoard
+      notes={notes}
+      addNote={saveNote}
+      updateNote={() => console.log('IMPLEMENT NODE UPDATING')}
+      deleteNote={deleteNote}
+    />
+  </div>);
 }
 
 export default App;
