@@ -1,3 +1,13 @@
 .notes-board {
+    height: 100%;
+}
+
+.notes-board_list {
     position: relative;
+    height: 90%;
+}
+
+.notes-board_trash-zone {
+    height: 10%;
+    background: #F2946F;
 }

@@ -1,1 +1,1 @@
-export const LOCAL_STORAGE_NOTES_KEY = 'STICKYNOTES_NOTES';
+export const SAMPLE_NOTE_KEY = 'New note.';

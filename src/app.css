@@ -1,9 +1,5 @@
-.application-wrapper {
-    padding: 10px;
-}
-
 .add-btn {
     position: fixed;
     right: 10px;
-    bottom: 10px;
+    top: 10px;
 }
