@@ -8,7 +8,9 @@
     "react-scripts": "3.4.3"
   },
   "scripts": {
-    "start": "react-scripts start"
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "build:prod": "react-scripts build --prod"
   },
   "eslintConfig": {
     "extends": "react-app"

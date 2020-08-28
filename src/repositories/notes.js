@@ -5,7 +5,7 @@ const LOCAL_STORAGE_NOTES_KEY = 'STICKYNOTES_NOTES';
 /**
  * Implements CRUD operations with Note entity.
  *
- * @type NotesRepository
+ * @type {NotesRepository}
  */
 class NotesRepository {
     _initialized = false;
